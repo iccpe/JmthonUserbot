@@ -1,3 +1,11 @@
+from telethon import TelegramClient
+import os
+
+API_ID = int(os.environ.get("API_ID"))
+API_HASH = os.environ.get("API_HASH")
+
+client = TelegramClient("bot", API_ID, API_HASH)
+
 import asyncio
 from pyrogram import Client
 
