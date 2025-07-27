@@ -1,5 +1,7 @@
+if __name__ == "__main__":
+    print("This file is for configuration only.")
 import os
 
-API_ID = int(os.getenv("API_ID", 0))
-API_HASH = os.getenv("API_HASH", "")
-SESSION = os.getenv("SESSION", "")
+API_ID = int(os.environ.get("API_ID"))
+API_HASH = os.environ.get("API_HASH")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
