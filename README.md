@@ -1,2 +1,2 @@
 # JmthonUserbot
-A free telegram userbot by telethon
+A free Telegram userbot by telethon
