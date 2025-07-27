@@ -1,3 +1,12 @@
+from telethon import TelegramClient
+from commands import register_commands  # تأكد أن ملفك بنفس الاسم
+
+client = TelegramClient('session', api_id, api_hash)
+
+register_commands(client)  # هنا نربط الأوامر بالبوت
+
+client.start()
+client.run_until_disconnected() 
 from telethon import TelegramClient, events
 import config
 import commands
@@ -11,4 +20,4 @@ client = TelegramClient(StringSession(config.SESSION), config.API_ID, config.API
 commands.register_all_commands(client)
 
 print("✅ البوت بدأ العمل ...")
-client.run_until_disconnected()
+client.run_until_disconnected 
