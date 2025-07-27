@@ -1,3 +1,15 @@
+from pyrosession import client
+import os
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+
+async def main():
+    await client.start(bot_token=BOT_TOKEN)
+    print("✅ Bot is running...")
+    await client.run_until_disconnected()
+
+if __name__ == '__main__':
+    client.loop.run_until_complete(main())
 from telethon import TelegramClient
 from commands import register_commands  # تأكد أن ملفك بنفس الاسم
 
