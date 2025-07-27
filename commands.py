@@ -1,4 +1,13 @@
 from telethon import events
+
+def register_commands(client):
+    @client.on(events.NewMessage(pattern=r'\.مرحبا'))
+    async def greet(event):
+        await event.respond("أهلا وسهلا، البوت شغّال! 🤖🔥")
+import time
+start_time = time.time()
+
+from telethon import events
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 import os
 
@@ -6,8 +15,20 @@ def register_all_commands(client):
 
     # --------- أوامر أساسية ---------
     @client.on(events.NewMessage(pattern=r'\.فحص'))
-    async def cmd_check(event):
-        await event.respond("✅ البوت شغال")
+async def cmd_check(event):
+    current_time = time.time()
+    uptime = int(current_time - start_time)
+    hours = uptime // 3600
+    minutes = (uptime % 3600) // 60
+    seconds = uptime % 60
+
+    await event.respond(
+        f"🔍 **فحص النظام**\n\n"
+        f"✅ البوت يعمل بكفاءة!\n"
+        f"🕒 مدة التشغيل: {hours} ساعة و {minutes} دقيقة و {seconds} ثانية\n"
+        f"📌 النسخة: v1.0\n"
+        f"⚡ توقيع البوت: عمّار 💻🚀"
+    )
 
     @client.on(events.NewMessage(pattern=r'\.حذف'))
     async def cmd_delete(event):
