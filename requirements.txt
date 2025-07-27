@@ -78,3 +78,6 @@ yt_dlp
 git+https://github.com/alexmercerind/youtube-search-python
 git+https://github.com/buddhhu/img2html.git
 git+https://github.com/sandy1709/py-googletrans
+
+copyright = "© 2023 @jmthon" 
+ # حقوق محمد باقر مالك يوزربوت جمثون #
